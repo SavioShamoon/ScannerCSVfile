@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,7 +19,6 @@ public class ScannerReadCSVFile
         // Set the delimiter as a new-line character so we can read the
         // data one line at a time
         scanner.useDelimiter("\n");
-
 
         // Continue while there's still data in the file to be read
         while (scanner.hasNext()) {
@@ -47,22 +47,43 @@ public class ScannerReadCSVFile
             // Pay attention to the spacing on your output
             //
             // Write your code in the space below!
-            
+
             Scanner scan = new Scanner(line);
-            
+
             scan.useDelimiter(",");
-            int i = 0;
-            String str = scan.next(line);
+            int score = 0;
+            int a = 0;
+            int sum = 0;
+            int Lines = 0;
+            int testscore = 0;
+            String classsec = "";
+            if (Lines == 1) {
+                System.out.println ("class Section" + ";" + "sum");
+            } else {
+                while(scan.hasNext()) {
+                    a = 0;
+                    while (a <= 10) {
 
-            while(scan.hasNext()) {
-                
-                i++;
+                        if (Lines == 1) {
+                            classsec = "Class Section";
+                            Lines ++;
+                        } else {  
+                            if (score > 100) {
+                                classsec += score;
+
+                            }
+                            else { 
+                                testscore += score;
+
+                            }
+                            a++;
+
+                        }
+                    }
+                }
             }
-            
         }
-    }
-
-    public static void main (String[] args) {
+    } public static void main (String[] args) {
         try {
             ScannerReadCSVFile srCsv = new ScannerReadCSVFile();
             srCsv.run();
